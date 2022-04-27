@@ -184,3 +184,4 @@ if __name__ == "__main__":
     agent = Agent()
     agent.add_property()
     agent.display_properties()
+    print("hello")
