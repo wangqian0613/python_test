@@ -15,7 +15,8 @@ class Property:
 
     @staticmethod
     def prompt_init():
-        return dict(square_feet=input("Enter the square feet: "), beds=input("Enter number of bedrooms: "), baths=input("Enter number of baths: "))
+        return dict(square_feet=input("Enter the square feet: "), beds=input("Enter number of bedrooms: "),
+                    baths=input("Enter number of baths: "))
 
 
 def get_valid_input(input_string, valid_options):
@@ -40,6 +41,7 @@ class Apartment(Property):
         print("APARTMENT DETAILS")
         print("laundry: %s" % self.laundry)
         print("has balcony: %s" % self.balcony)
+        print()
 
     @staticmethod
     def prompt_init():
@@ -69,6 +71,7 @@ class House(Property):
         print("# of stories: {}".format(self.num_stories))
         print("garage: {}".format(self.garage))
         print("fenced yard: {}".format(self.fenced))
+        print()
 
     @staticmethod
     def prompt_init():
@@ -81,7 +84,7 @@ class House(Property):
         return parent_init
 
 
-class Purchase:
+class Purchase(Property):
 
     def __init__(self, price="", taxes="", **kwargs):
         super().__init__(**kwargs)
@@ -93,6 +96,7 @@ class Purchase:
         print("PURCHASE DETAILS")
         print("selling price: {}".format(self.price))
         print("estimated taxes: {}".format(self.taxes))
+        print()
 
     @staticmethod
     def prompt_init():
@@ -100,7 +104,7 @@ class Purchase:
                     taxes=input("What are the estimated taxes? "))
 
 
-class Rental:
+class Rental(Property):
 
     def __init__(self, furnished="", utilities="", rent="", **kwargs):
         super().__init__(**kwargs)
@@ -114,6 +118,7 @@ class Rental:
         print("furnished: {}".format(self.furnished))
         print("estimated utilities: {}".format(self.utilities))
         print("rent: {}".format(self.rent))
+        print()
 
     @staticmethod
     def prompt_init():
