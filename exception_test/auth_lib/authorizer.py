@@ -1,5 +1,6 @@
 from .auth_exception import *
 from .authenticator import *
+# import auth_exception
 
 
 class Authorizer:
@@ -24,8 +25,8 @@ class Authorizer:
         except KeyError:
             raise PermissionsError('Permission does not Exists')
         else:
-            if username not in self.authenticator.users:
-                raise InvalidUsername(username)
+            if username not in self.authenticator.administrator:
+                raise InvalidAdministratorName(username)
             perm_set.add(username)
 
     def check_permission(self, perm_name, username):

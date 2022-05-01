@@ -18,6 +18,10 @@ class InvalidUsername(AuthException):
     pass
 
 
+class InvalidAdministratorName(AuthException):
+    pass
+
+
 class InvalidPassword(AuthException):
     pass
 

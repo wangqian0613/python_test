@@ -6,7 +6,7 @@ class User:
     def __init__(self, username, password):
         # Create a new user object. The password will be encrypted before storing.
         self.username = username
-        self.password = password
+        self.password = self._encrypted_pw(password)
         self.logged_status = False
 
     def _encrypted_pw(self, password):
