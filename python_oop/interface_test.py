@@ -30,8 +30,6 @@ class User(metaclass=ABCMeta):
         pass
 
 
-
-
 class VIPUser(User):
     def swim(self):
         return "this is  VIP swim"
